@@ -1,12 +1,8 @@
 import React from "react";
-import { getMonth } from "../date";
+import { getCorrectTime, getMonth } from "../date";
 import './style.css'
 
 export class ShowNotes extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    // }
-
     render() {
         return (
             <>
@@ -17,9 +13,9 @@ export class ShowNotes extends React.Component {
                     {getMonth(this.props.notes.createdAt.getMonth()) + ', '}
                     {this.props.notes.createdAt.getFullYear() + ' year '}
                     at
-                    {' ' + this.props.notes.createdAt.getHours() + ':'}
-                    {this.props.notes.createdAt.getMinutes() + ':'}
-                    {this.props.notes.createdAt.getSeconds()}
+                    {' ' + getCorrectTime(this.props.notes.createdAt.getHours()) + ':'}
+                    {getCorrectTime(this.props.notes.createdAt.getMinutes()) + ':'}
+                    {getCorrectTime(this.props.notes.createdAt.getSeconds())}
                 </p>
             </>
         )
