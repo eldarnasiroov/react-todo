@@ -1,0 +1,10 @@
+.text {
+    color: #112D4E;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.date {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
